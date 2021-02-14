@@ -25,13 +25,21 @@
       <button type="button" id="search-btn" class="btn btn-primary mb-2">Search</button>
     </div>
     <section class="images">
-      <div class="justify-content-around align-items-center mt-3 gallery-header mb-2">
+      <div class="justify-content-around align-items-center mt-3 gallery-header mb-5 mt-4">
         <h3 class="head-title text-center">Select image for create slider</h3>
         <div class="input-group col-md-3 mb-2 mb-md-0">
           <input class="form-control" id="duration" placeholder="slider change duration">
         </div>
         <button id="create-slider" class="btn btn-primary px-5">Create slider</button>
       </div>
+
+      <!-- spinner -->
+      <div id="loading-images" class="d-none align-items-center justify-content-center">
+        <span class="mr-5">Loading...</span>
+        <div class="spinner-border ms-auto ml-5" role="status" aria-hidden="true">
+        </div>
+      </div>
+
       <div class="row gallery">
 
       </div>
