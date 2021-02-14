@@ -15,7 +15,6 @@ const KEY = '15674931-a9d714b6e9d654524df198e00&q';
 
 // show images 
 const showImages = (images) => {
-  // console.log(images);
   imagesArea.style.display = 'block';
   gallery.innerHTML = '';
   // show gallery title
@@ -40,18 +39,15 @@ let slideIndex = 0;
 const selectItem = (event, img) => {
   let element = event.target;
   element.classList.toggle('added');
-
   let item = sliders.indexOf(img);
-
   if (item === -1) {
     sliders.push(img);
   } else {
     sliders = sliders.filter((x) => { return x !== img })
     //alert('Hey, Already added !')
   }
-  
 }
-
+//Event listener for Enter button
 document.getElementById('search').addEventListener('keypress', function (event) {
   if (event.key == 'Enter') {
     document.getElementById('search-btn').click();
@@ -100,9 +96,8 @@ const createSlider = () => {
     document.getElementById('duration').value = '';
 
   }
-
+  selectedList();
 }
-
 // change slider index 
 const changeItem = index => {
   changeSlide(slideIndex += index);
@@ -140,14 +135,21 @@ sliderBtn.addEventListener('click', function () {
   createSlider()
 })
 
+//Function for Loading spinner
 const toggleSpinner = (show) => {
   const spinner = document.getElementById('loading-images');
   spinner.classList.toggle('d-none');
   spinner.classList.toggle('d-flex');
 }
 
+//Function for selected Image's list to show bellow slider
+selectedList = () => {
+  sliders.forEach(singleImage => {
+    let listDiv = document.createElement('div');
+    listDiv.innerHTML = `
+    <img class="list-img m-3 rounded " src="${singleImage}" alt="${singleImage}">`;
+    document.getElementById("selected-images").appendChild(listDiv);
 
-
-
-
+  })
+}
 

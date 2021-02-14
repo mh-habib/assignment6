@@ -64,3 +64,10 @@ img {
     width: 90%;
   }
 }
+.list-img{
+  width: 150px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid gray;
+  float: left;
+}
